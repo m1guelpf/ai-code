@@ -1,0 +1,50 @@
+{
+	"name": "ai-code",
+	"version": "0.1.1",
+	"license": "MIT",
+	"author": "Miguel Piedrafita",
+	"main": "dist/index.js",
+	"repository": "https://github.com/m1guelpf/ai-code",
+	"module": "dist/ai-code.esm.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"src"
+	],
+	"scripts": {
+		"lint": "dts lint",
+		"build": "dts build",
+		"size": "size-limit",
+		"start": "dts watch",
+		"prepare": "dts build",
+		"analyze": "size-limit --why"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "dts lint"
+		}
+	},
+	"size-limit": [
+		{
+			"path": "dist/auto-code.cjs.production.min.js",
+			"limit": "10 KB"
+		},
+		{
+			"path": "dist/auto-code.esm.js",
+			"limit": "10 KB"
+		}
+	],
+	"devDependencies": {
+		"@size-limit/preset-small-lib": "^8.1.0",
+		"@tsconfig/recommended": "^1.0.1",
+		"@types/node": "^18.11.8",
+		"dts-cli": "^1.6.0",
+		"husky": "^8.0.1",
+		"size-limit": "^8.1.0",
+		"tslib": "^2.4.1",
+		"typescript": "^4.8.4"
+	},
+	"dependencies": {
+		"dotenv": "^16.0.3"
+	}
+}

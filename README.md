@@ -20,9 +20,12 @@ Import the package and call any function, passing any number of arguments. The p
 ```js
 import AI from 'ai-code'
 
-await AI.slugify('My Article') // my-article
 await AI.randomNumberBetween(1, 10) // 4
+await AI.slugify('My Article') // my-article
+await AI.hasProfanityRegex('f*ck this lol') // false
+await AI.shortenETHAddress(ethAddress) // 0xE340...b39D
 await AI.extractHashtags('this is #really cool! #ai #code') // ['#really', '#ai', '#code']
+await AI.getProgrammerJoke() // Why do programmers always mix up Halloween and Christmas? Because Oct 31 == Dec 25
 ```
 
 ## License
